@@ -1,6 +1,21 @@
 "use client"
 
-import { Bell, BookOpen, Calendar, ChevronDown, ClipboardList, Clock, FileText, GraduationCap, Home, LogOut, Menu, Search, User, Users } from 'lucide-react'
+import {
+  Bell,
+  BookOpen,
+  Calendar,
+  ChevronDown,
+  ClipboardList,
+  Clock,
+  FileText,
+  GraduationCap,
+  Home,
+  LogOut,
+  Menu,
+  Search,
+  User,
+  Users,
+} from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
@@ -315,34 +330,48 @@ export default function Dashboard() {
         {/* Sidebar (desktop) */}
         <aside className="hidden w-64 flex-col border-r bg-white md:flex">
           <div className="flex flex-col gap-2 p-4">
-            <div className="flex items-center gap-2 px-2 py-1.5">
-              <Home className="h-5 w-5 text-[#003a88]" />
-              <span className="text-sm font-medium text-[#003a88]">Dashboard</span>
-            </div>
+            <Link href="/" className="flex items-center gap-2 rounded-md px-2 py-1.5 hover:bg-slate-100">
+              <div className="flex items-center gap-2 px-2 py-1.5 text-[#003a88]">
+                <Home className="h-5 w-5 text-slate-600" />
+                <span className="text-sm font-medium">Dashboard</span>
+              </div>
+            </Link>
             <Link href="/students" className="flex items-center gap-2 rounded-md px-2 py-1.5 hover:bg-slate-100">
-              <Users className="h-5 w-5 text-slate-600" />
-              <span className="text-sm font-medium">Students</span>
-            </Link>
             <div className="flex items-center gap-2 rounded-md px-2 py-1.5 hover:bg-slate-100">
-              <BookOpen className="h-5 w-5 text-slate-600" />
-              <span className="text-sm font-medium">Classes</span>
-            </div>
+                <Users className="h-5 w-5 text-slate-600" />
+                <span className="text-sm font-medium">Students</span>
+              </div>
+            </Link>
+            <Link href="/classes" className="flex items-center gap-2 rounded-md px-2 py-1.5 hover:bg-slate-100">
+              <div className="flex items-center gap-2 rounded-md px-2 py-1.5 hover:bg-slate-100">
+                <BookOpen className="h-5 w-5 text-slate-600" />
+                <span className="text-sm font-medium">Classes</span>
+              </div>
+            </Link>
             <Link href="/attendance" className="flex items-center gap-2 rounded-md px-2 py-1.5 hover:bg-slate-100">
-              <ClipboardList className="h-5 w-5 text-slate-600" />
-              <span className="text-sm font-medium">Attendance</span>
+              <div className="flex items-center gap-2 rounded-md px-2 py-1.5 hover:bg-slate-100">
+                <ClipboardList className="h-5 w-5" />
+                <span className="text-sm font-medium">Attendance</span>
+              </div>
             </Link>
-            <div className="flex items-center gap-2 rounded-md px-2 py-1.5 hover:bg-slate-100">
-              <FileText className="h-5 w-5 text-slate-600" />
-              <span className="text-sm font-medium">Assignments</span>
-            </div>
-            <div className="flex items-center gap-2 rounded-md px-2 py-1.5 hover:bg-slate-100">
-              <GraduationCap className="h-5 w-5 text-slate-600" />
-              <span className="text-sm font-medium">Grades</span>
-            </div>
-            <div className="flex items-center gap-2 rounded-md px-2 py-1.5 hover:bg-slate-100">
-              <Calendar className="h-5 w-5 text-slate-600" />
-              <span className="text-sm font-medium">Schedule</span>
-            </div>
+            <Link href="/assignments" className="flex items-center gap-2 rounded-md px-2 py-1.5 hover:bg-slate-100">
+              <div className="flex items-center gap-2 rounded-md px-2 py-1.5 hover:bg-slate-100">
+                <FileText className="h-5 w-5 text-slate-600" />
+                <span className="text-sm font-medium">Assignments</span>
+              </div>
+            </Link>
+            <Link href="/grades" className="flex items-center gap-2 rounded-md px-2 py-1.5 hover:bg-slate-100">
+              <div className="flex items-center gap-2 rounded-md px-2 py-1.5 hover:bg-slate-100">
+                <GraduationCap className="h-5 w-5 text-slate-600" />
+                <span className="text-sm font-medium">Grades</span>
+              </div>
+            </Link>
+            <Link href="/schedule" className="flex items-center gap-2 rounded-md px-2 py-1.5 hover:bg-slate-100">
+              <div className="flex items-center gap-2 rounded-md px-2 py-1.5 hover:bg-slate-100">
+                <Calendar className="h-5 w-5 text-slate-600" />
+                <span className="text-sm font-medium">Schedule</span>
+              </div>
+            </Link>
             <Separator className="my-2" />
             <div className="flex items-center gap-2 rounded-md px-2 py-1.5 hover:bg-slate-100">
               <LogOut className="h-5 w-5 text-slate-600" />
@@ -644,7 +673,7 @@ function MobileSidebar() {
         </div>
       </div>
       <div className="flex flex-1 flex-col gap-2 p-4">
-        <Link href="#" className="flex items-center gap-2 rounded-md bg-slate-100 px-3 py-2 text-[#003a88]">
+        <Link href="/" className="flex items-center gap-2 rounded-md bg-slate-100 px-3 py-2 text-[#003a88]">
           <Home className="h-5 w-5" />
           <span className="text-sm font-medium">Dashboard</span>
         </Link>
@@ -652,7 +681,7 @@ function MobileSidebar() {
           <Users className="h-5 w-5 text-slate-600" />
           <span className="text-sm font-medium">Students</span>
         </Link>
-        <Link href="#" className="flex items-center gap-2 rounded-md px-3 py-2 hover:bg-slate-100">
+        <Link href="/classes" className="flex items-center gap-2 rounded-md px-3 py-2 hover:bg-slate-100">
           <BookOpen className="h-5 w-5 text-slate-600" />
           <span className="text-sm font-medium">Classes</span>
         </Link>
@@ -660,15 +689,15 @@ function MobileSidebar() {
           <ClipboardList className="h-5 w-5 text-slate-600" />
           <span className="text-sm font-medium">Attendance</span>
         </Link>
-        <Link href="#" className="flex items-center gap-2 rounded-md px-3 py-2 hover:bg-slate-100">
-          <FileText className="h-5 w-5 text-slate-600" />
+        <Link href="/assignments" className="flex items-center gap-2 rounded-md px-3 py-2 hover:bg-slate-100">
+          <ClipboardList className="h-5 w-5 text-slate-600" />
           <span className="text-sm font-medium">Assignments</span>
         </Link>
-        <Link href="#" className="flex items-center gap-2 rounded-md px-3 py-2 hover:bg-slate-100">
-          <GraduationCap className="h-5 w-5 text-slate-600" />
+        <Link href="/grades" className="flex items-center gap-2 rounded-md px-3 py-2 hover:bg-slate-100">
+          <FileText className="h-5 w-5 text-slate-600" />
           <span className="text-sm font-medium">Grades</span>
         </Link>
-        <Link href="#" className="flex items-center gap-2 rounded-md px-3 py-2 hover:bg-slate-100">
+        <Link href="/schedule" className="flex items-center gap-2 rounded-md px-3 py-2 hover:bg-slate-100">
           <Calendar className="h-5 w-5 text-slate-600" />
           <span className="text-sm font-medium">Schedule</span>
         </Link>
@@ -681,3 +710,4 @@ function MobileSidebar() {
     </div>
   )
 }
+
